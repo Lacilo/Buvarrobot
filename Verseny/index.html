@@ -54,28 +54,46 @@
 <script>
 i = 0;
 
+gyongyok = []
+
 while(i != 5){
-    rRublika = Math.random() * 25;
+    rRublika = Math.floor(Math.random() * 24);
+    rRublika++
     String(rRublika)
+    
+    console.log(gyongyok)
 
     console.log("1.")
 
-    rGyongy = Math.random() * 5;
+    rGyongy = Math.floor(Math.random() * 4);
     String(rGyongy)
 
     console.log("2.")
 
-
+    console.log(rGyongy)
+    
     kep = "gyongy"+rGyongy+".png"
 
     console.log(kep)
 
-    document.getElementById("1").src= kep;
+    
+    kepAdd = document.getElementById(rRublika)
+
+    if(gyongyok.includes(rRublika)){
+
+    }else{
+        kepAdd.src = kep
+        gyongyok.push(rRublika)
+        i++
+    }
+    
 
     console.log("3.")
 
-    i++
-}
 
+
+    
+}
+console.log(gyongyok)
 
 </script>
