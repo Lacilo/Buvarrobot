@@ -1,0 +1,13 @@
+table{
+    border: 2px solid;
+}
+
+
+td{
+    background-image: url("");
+    padding: 50px;
+}
+
+img{
+    height: 50px;
+}

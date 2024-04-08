@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <button id="robotstart" onclick="rLerak()">Robot indítása</button>
+        <div id="minden"></div>
+
+</body>
+</html>
+
+
+
+
+<script>
+
+var szel = prompt("milyen széles legyen a táblázat");
+var mag = prompt("milyen magas legyen a táblázat")
+var gyongySzam = prompt("hány darab gyöngy legyen a medencében")
+kiir="<table class='table'>";
+for (var i=0; i<mag;i++)
+{
+kiir+="<tr>";
+for (var j=0; j<szel;j++)
+{
+kiir+="<td id=";
+kiir+=i*szel+j+1;
+kiir+="''>";
+kiir+="<img id="
+kiir+=i*szel+j+1;
+kiir+=" src='ures.png'>"
+kiir+="</td>";
+}
+kiir+="</tr>";
+}
+kiir+="</table>"
+
+document.getElementById("minden").innerHTML+=kiir;
+console.log(minden)
+
+
+jobbra = 1
+balra = -1
+le = szel
+fel = -szel
+
+lepesek = 5
+lepesMost = 0
+utvonal = [le, le, le, jobbra, jobbra,]
+
+
+x = 0;
+
+gyongyok = []
+
+while(x != gyongySzam){
+    rRublika = Math.floor(Math.random() * (szel*szel-1));
+    rRublika++
+    String(rRublika)
+    
+    console.log(gyongyok)
+
+
+    rGyongy = Math.floor(Math.random() * 5);
+    String(rGyongy)
+
+
+
+    console.log(rGyongy)
+    
+    kep = "gyongy"+rGyongy+".png"
+
+    console.log(kep)
+
+    
+    kepAdd = document.getElementById(rRublika)
+
+    if(gyongyok.includes(rRublika)){
+
+    }else{
+        kepAdd.src = kep
+        gyongyok.push(rRublika)
+        x++
+    }
+    
+
+}
+console.log(gyongyok)
+
+
+rPozicio = 1
+
+
+function rLerak(){
+  document.getElementById("1").src =" robot.png"
+}
+
+
+document.addEventListener('keydown', function(event) {
+    
+    if(event.keyCode == 39) {
+        if(lepesMost < lepesek){
+            document.getElementById(rPozicio).src = ""
+            rPozicio = rPozicio + parseInt(utvonal[lepesMost])
+            lepesMost++
+            lepesek++
+            console.log(rPozicio)
+            document.getElementById(rPozicio).src = "robot.png"
+        }
+    }
+});
+
+
+</script>
